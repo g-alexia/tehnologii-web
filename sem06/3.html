@@ -1,0 +1,82 @@
+<html>
+    <head>
+    </head>
+
+    <body>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nume</th>
+                    <th>Facultate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ionut</td>
+                    <td>ASE</td>
+                </tr>
+                <tr>
+                    <td>Alex</td>
+                    <td>Poli</td>
+                </tr>
+                <tr>
+                    <td>Mihai</td>
+                    <td>Poli</td>
+                </tr>
+                <tr>
+                    <td>Andrei</td>
+                    <td>Unibuc</td>
+                </tr>
+                <tr>
+                    <td>Ionel</td>
+                    <td>Fabiz</td>
+                </tr>
+                <tr>
+                    <td>Pop</td>
+                    <td>Pompieri</td>
+                </tr>
+                <tr>
+                    <td>Tania</td>
+                    <td>UBB</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+    <script type="text/javascript">
+
+        // let evenCollection =document.querySelectorAll('tbody tr:nth-child(even)');
+        // let oddCollection =document.querySelectorAll('tbody tr:nth-child(odd)');
+
+        // if(evenCollection && evenCollection.length > 0){
+        //     for(let item of evenCollection){
+        //         item.style.backgroundColor = "red"; 
+        //     }
+        // }
+        // if(oddCollection && oddCollection.length > 0){
+        //     for(let item of oddCollection){
+        //         item.style.backgroundColor = "yellow"; 
+        //     }
+        // }
+
+        // pas3
+
+        let first = document.querySelector('tbody tr:first-child');
+            if (first) 
+                first.style.backgroundColor = "blue";
+
+        let last = document.querySelector('tbody tr:last-child');
+            if (last) 
+                last.style.backgroundColor = "green";
+      
+        let row3 = document.querySelector('tbody tr:nth-child(3)');
+        if (row3) 
+            row3.style.backgroundColor = "violet";
+
+        let row5 = document.querySelector('tbody tr:nth-child(5)');
+        if (row5) 
+            row5.style.backgroundColor = "violet";
+
+    </script>
+
+</html>

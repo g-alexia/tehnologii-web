@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Eveniment custom cu paragraf</title>
+<script>
+window.onload = () => {
+    const button = document.getElementById('myBtn');
+
+    const customEventHandler = () => {
+        const p = document.createElement('p');
+        p.textContent = 'Butonul a fost apăsat!';
+        p.style.color = 'red';
+        document.body.appendChild(p);
+    };
+
+    document.addEventListener('butonApasat', customEventHandler);
+
+
+    button.addEventListener('click', () => {
+        document.dispatchEvent(new Event('butonApasat'));
+    });
+};
+</script>
+</head>
+<body>
+    <button id="myBtn">Apasă-mă!</button>
+</body>
+</html>

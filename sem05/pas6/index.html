@@ -1,0 +1,66 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+
+    <div>
+        <form>
+            <input id="inputName" type="text">
+            <br /> <br />
+            <input id="inputAge" type="number"> <br /> <br />
+            <input value="submit" onclick="sendData()" type="button"> <br /><br />
+        </form>
+    </div>
+    <div id="tableData">
+
+    </div>
+    
+</body>
+    
+    <script src="index.js"></script>
+</html> -->
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>Obține resursa după ID</title>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+const apiUrl = "http://localhost:8000/api/"; 
+
+async function getResourceById() {
+    const idInput = document.getElementById('resourceId');
+    const resultDiv = document.getElementById('result');
+
+    const id = idInput.value.trim();
+    if (!id) {
+        alert("Introdu un ID!");
+        return;
+    }
+
+    try {
+        const response = await axios.get(apiUrl + id);
+        const data = response.data;
+
+        resultDiv.textContent = JSON.stringify(data, null, 2);
+    } catch (err) {
+        resultDiv.textContent = "Resursa nu a fost găsită sau a apărut o eroare.";
+        console.error(err);
+    }
+}
+</script>
+</head>
+<body>
+<h1>Caută resursa după ID</h1>
+
+<form onsubmit="event.preventDefault(); getResourceById();">
+    <input type="number" id="resourceId" placeholder="Introdu ID-ul">
+    <button type="submit">Caută</button>
+</form>
+
+<h2>Rezultat:</h2>
+<pre id="result"></pre>
+</body>
+</html>

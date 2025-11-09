@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <style>
+
+            .btn:hover{
+                color: blue;
+            }
+            input:focus{
+                background-color: yellow;
+            }
+            input:required{
+                background-color: red;
+            }
+
+            p::first-line{
+                font-size: 120%;
+                font-weight: bold;
+            }
+
+            /*pas3*/
+            #chk:checked {
+            outline: 2px solid red;
+            outline-offset: 0px;
+            }
+
+            
+        </style>
+    </head>
+
+    <body>
+        <button class="btn">Click me!</button>
+        <input type="text">
+        <input type="text" required>
+
+        <input id="chk" type="checkbox"> <!--pas3-->
+        <p>Ala bala portocala</p>
+    </body>
+</html>
